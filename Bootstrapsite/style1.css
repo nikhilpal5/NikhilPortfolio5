@@ -1,0 +1,158 @@
+@font-face {
+    font-family: HomerSimpson;
+    src: url("resource/HomerSimpson.ttf");
+}
+
+@font-face {
+    font-family: AntiCorona;
+    src: url("resource/AntiCorona.ttf");
+}
+
+body {
+    margin: 0;
+    
+}
+
+nav {
+    background-color: rgb(236, 232, 229);
+    height: 60px;
+    padding: 10px;
+    position: sticky;
+    top: 0px;
+}
+
+#logo {
+    float: left;
+}
+
+#menu {
+    float: right;
+}
+
+#menu a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px;
+    text-transform: uppercase;
+    font-family: AntiCorona;
+}
+
+#menu a:hover {
+    background-color: brown;
+    color: white;
+}
+
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(250, 235, 215, 0.3)), url(bg.jpg);
+    background-size: cover;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.63);
+    padding: 100px;
+}
+
+
+
+#content1 {
+    text-align: center;
+    padding: 30px 80px;
+}
+
+.Blue-Button {
+    padding: 8px 18px;
+    background-color: rgb(41, 4, 110);
+    border: 2px solid rgb(22, 2, 59);
+    color: white;
+    text-transform: uppercase;
+}
+
+#content2 {
+    text-align: center;
+    padding: 120px;
+    background: url(img2.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#content2 h1 {
+    font-size: 200%;
+    color: white;
+}
+
+#content3 {
+    padding: 50px;
+    text-align: center;
+}
+
+#content3 div {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    margin: 0 30px;
+}
+
+#content3 div p {
+    border: 5px solid rgb(250, 235, 215);
+    padding: 15px;
+}
+
+#content3 div span {
+    font-size: 40px;
+    position: relative;
+    top: 50px;
+}
+
+#content4 {
+    background-color: antiquewhite;
+    height: 60px;
+    padding: 20px 50px;
+}
+
+#content4 h2 {
+    width: 300px;
+    float: left;
+}
+
+#content4 button {
+    float: right;
+    margin-top: 15px;
+}
+
+footer {
+    background-color: rgba(4, 62, 110, 0.918);
+    padding: 60px;
+    text-align: center;
+    color: white;
+}
+
+footer input {
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: 1.5px solid rgb(143, 143, 143);
+}
+
+footer>section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer>section div {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    margin: 10px;
+    text-align: left;
+    border-top: 2px solid white;
+    padding-top: 30px;
+}
+
+footer iframe {
+    width: 100%;
+}
+
+footer a {
+    color: white;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: HomerSimpson;
+}

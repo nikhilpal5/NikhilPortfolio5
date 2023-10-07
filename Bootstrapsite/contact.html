@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Nikhil Pal" content="This is My Portfolio for this Jobs.">
+    <title>Contact</title>
+    <link rel="icon" href="whatsapp.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        section {
+            padding: 2px;
+            margin: 4px;
+            background-color: rgb(31, 165, 165);
+            text-decoration: none;
+        }
+
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <button type="home"> <a href="index.html">Home</a></button>
+    </section>
+    <div class="container">
+        <h1>Contact:</h1>
+        <form name="google-sheet"    id="contactForm" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="mobileNumber">Mobile Number:</label>
+                <input name="MobileNumber" type="text" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number">
+                <span class="error" id="mobileError"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input name="EmailId" type="email" id="email"  placeholder="Enter your email address">
+                <span class="error" id="emailError"></span>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var mobileNumber = document.getElementById("mobileNumber").value;
+            var email = document.getElementById("email").value;
+            var mobilePattern = /^[0-9]{10}$/;
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            document.getElementById("mobileError").innerHTML = "";
+            document.getElementById("emailError").innerHTML = "";
+
+            if (!mobilePattern.test(mobileNumber)) {
+                document.getElementById("mobileError").innerHTML = "Please enter a valid 10-digit mobile number";
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").innerHTML = "Please enter a valid email address";
+                return false;
+            }
+
+            return true;
+        }
+
+        //script for Google Sheet
+  var scriptURL = "https://script.google.com/macros/s/AKfycbwp5-Yrd-CGiXWSeG4vUGZeTZMqJQMz69tmqhuUuEcPMou7Xnqyu_UuE7fW_3MDnJNIRg/exec";
+  var form = document.forms['google-sheet'];
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+      .catch(error => console.error('Error!', error.message))
+  });
+    </script>
+</body>
+
+</html>
